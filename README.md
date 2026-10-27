@@ -32,7 +32,3 @@ pnpm run check
 ```
 
 `pnpm run check` typechecks and tests the validator, then validates every entry and example.
-
-## Licensing
-
-Licensing terms for this repository are coming soon. Each listed item keeps its own license. Skills record theirs in the `license` field of `SKILL.md`.
