@@ -1,0 +1,25 @@
+id: svelte
+name: Svelte
+description: "Official Svelte and SvelteKit documentation, plus a code analyzer that suggests fixes for Svelte components."
+author: Svelte
+url: https://github.com/sveltejs/mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/svelte.png
+category: search
+content:
+  - name: Remote Server
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://mcp.svelte.dev/mcp"
+      }
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@sveltejs/mcp"
+        ]
+      }

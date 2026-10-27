@@ -1,0 +1,44 @@
+id: mcp-toolbox-postgres
+name: MCP Toolbox for Databases (PostgreSQL)
+description: "Google's MCP Toolbox with its prebuilt PostgreSQL tools: list tables, inspect schemas, and run SQL against your database."
+author: Google
+url: https://github.com/googleapis/genai-toolbox
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/mcp-toolbox-postgres.png
+category: data
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@toolbox-sdk/server",
+          "--prebuilt=postgres",
+          "--stdio"
+        ],
+        "env": {
+          "POSTGRES_HOST": "{{POSTGRES_HOST}}",
+          "POSTGRES_PORT": "{{POSTGRES_PORT}}",
+          "POSTGRES_DATABASE": "{{POSTGRES_DATABASE}}",
+          "POSTGRES_USER": "{{POSTGRES_USER}}",
+          "POSTGRES_PASSWORD": "{{POSTGRES_PASSWORD}}"
+        }
+      }
+    parameters:
+      - name: Host
+        key: POSTGRES_HOST
+        placeholder: localhost
+      - name: Port
+        key: POSTGRES_PORT
+        placeholder: "5432"
+      - name: Database
+        key: POSTGRES_DATABASE
+        placeholder: postgres
+      - name: User
+        key: POSTGRES_USER
+        placeholder: postgres
+      - name: Password
+        key: POSTGRES_PASSWORD
+        placeholder: your_password

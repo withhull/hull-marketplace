@@ -1,0 +1,25 @@
+id: elevenlabs
+name: ElevenLabs
+description: "Generates speech, clones and designs voices, transcribes audio, and creates sound effects with ElevenLabs."
+author: ElevenLabs
+url: https://github.com/elevenlabs/elevenlabs-mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/elevenlabs.png
+category: productivity
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "elevenlabs-mcp"
+        ],
+        "env": {
+          "ELEVENLABS_API_KEY": "{{ELEVENLABS_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: ElevenLabs API key
+        key: ELEVENLABS_API_KEY
+        placeholder: your_elevenlabs_api_key

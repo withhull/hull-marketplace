@@ -1,0 +1,18 @@
+id: railway
+name: Railway
+description: "Creates and manages Railway projects, services, environments, variables, deployments, and logs through the Railway CLI."
+author: Railway
+url: https://github.com/railwayapp/railway-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/railway.png
+category: development
+content:
+  - name: Railway CLI
+    prerequisites:
+      - "Railway CLI, logged in (railway login)"
+    content: |
+      {
+        "command": "railway",
+        "args": [
+          "mcp"
+        ]
+      }

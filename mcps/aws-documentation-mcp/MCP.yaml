@@ -1,0 +1,22 @@
+id: aws-documentation-mcp
+name: AWS Documentation
+description: "Fetches AWS documentation pages as markdown, searches the docs, and recommends related pages."
+author: AWS Labs
+url: https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/aws-documentation-mcp.png
+category: search
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "awslabs.aws-documentation-mcp-server@latest"
+        ],
+        "env": {
+          "FASTMCP_LOG_LEVEL": "ERROR",
+          "AWS_DOCUMENTATION_PARTITION": "aws"
+        }
+      }

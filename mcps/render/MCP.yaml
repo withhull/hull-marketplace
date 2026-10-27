@@ -1,0 +1,21 @@
+id: render
+name: Render
+description: "Lists and creates Render services and databases, reads deploys, logs, and metrics, and queries Render Postgres."
+author: Render
+url: https://github.com/render-oss/render-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/render.png
+category: development
+content:
+  - name: Remote Server
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://mcp.render.com/mcp",
+        "headers": {
+          "Authorization": "Bearer {{RENDER_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: Render API key
+        key: RENDER_API_KEY
+        placeholder: rnd_your_api_key

@@ -1,0 +1,21 @@
+id: posthog
+name: PostHog
+description: "Queries PostHog product analytics, insights, feature flags, experiments, and error tracking."
+author: PostHog
+url: https://github.com/PostHog/mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/posthog.png
+category: observability
+content:
+  - name: Remote Server
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://mcp.posthog.com/mcp",
+        "headers": {
+          "Authorization": "Bearer {{POSTHOG_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: Personal API key
+        key: POSTHOG_API_KEY
+        placeholder: phx_your_personal_api_key

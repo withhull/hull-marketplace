@@ -1,0 +1,31 @@
+id: paypal
+name: PayPal
+description: "Creates and manages PayPal invoices, orders, products, subscriptions, disputes, and transactions."
+author: PayPal
+url: https://github.com/paypal/agent-toolkit
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/paypal.png
+category: business
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@paypal/mcp",
+          "--tools=all"
+        ],
+        "env": {
+          "PAYPAL_ACCESS_TOKEN": "{{PAYPAL_ACCESS_TOKEN}}",
+          "PAYPAL_ENVIRONMENT": "{{PAYPAL_ENVIRONMENT}}"
+        }
+      }
+    parameters:
+      - name: Access token
+        key: PAYPAL_ACCESS_TOKEN
+        placeholder: your_paypal_access_token
+      - name: Environment (SANDBOX or PRODUCTION)
+        key: PAYPAL_ENVIRONMENT
+        placeholder: SANDBOX

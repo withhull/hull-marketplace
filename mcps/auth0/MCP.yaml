@@ -1,0 +1,21 @@
+id: auth0
+name: Auth0
+description: "Manages Auth0 tenants: applications, APIs, actions, forms, and logs. Beta."
+author: Auth0
+url: https://github.com/auth0/auth0-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/auth0.png
+category: development
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+      - "Run npx @auth0/auth0-mcp-server init once to sign in"
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@auth0/auth0-mcp-server",
+          "run"
+        ]
+      }

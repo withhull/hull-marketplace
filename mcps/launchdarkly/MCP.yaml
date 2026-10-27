@@ -1,0 +1,29 @@
+id: launchdarkly
+name: LaunchDarkly
+description: "Creates, reads, and updates LaunchDarkly feature flags, targeting rules, and environments."
+author: LaunchDarkly
+url: https://github.com/launchdarkly/mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/launchdarkly.png
+category: development
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "--package",
+          "@launchdarkly/mcp-server",
+          "--",
+          "mcp",
+          "start",
+          "--api-key",
+          "{{LD_API_KEY}}"
+        ]
+      }
+    parameters:
+      - name: LaunchDarkly API access token
+        key: LD_API_KEY
+        placeholder: api-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx

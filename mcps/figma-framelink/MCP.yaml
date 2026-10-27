@@ -1,0 +1,25 @@
+id: figma-framelink
+name: Figma (Framelink)
+description: Gives the agent layout and styling data from Figma files and frames so it can implement designs accurately.
+author: GLips
+url: https://github.com/GLips/Figma-Context-MCP
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/figma-framelink.png
+category: development
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "figma-developer-mcp",
+          "--figma-api-key={{FIGMA_API_KEY}}",
+          "--stdio"
+        ]
+      }
+    parameters:
+      - name: Figma personal access token
+        key: FIGMA_API_KEY
+        placeholder: figd_your_token

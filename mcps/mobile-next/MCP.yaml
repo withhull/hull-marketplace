@@ -1,0 +1,20 @@
+id: mobile-next
+name: Mobile Next
+description: "Drives iOS simulators, Android emulators, and real devices: launch apps, tap, type, swipe, and read the screen."
+author: Mobile Next
+url: https://github.com/mobile-next/mobile-mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/mobile-next.png
+category: web-automation
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+      - Xcode (iOS) or Android platform tools
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@mobilenext/mobile-mcp@latest"
+        ]
+      }

@@ -1,0 +1,27 @@
+id: semgrep
+name: Semgrep
+description: "Scans code for security vulnerabilities and bugs with Semgrep rules, and can write and run custom rules."
+author: Semgrep
+url: https://github.com/semgrep/semgrep/tree/develop/cli/src/semgrep/mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/semgrep.png
+category: development
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "semgrep",
+          "mcp"
+        ],
+        "env": {
+          "SEMGREP_APP_TOKEN": "{{SEMGREP_APP_TOKEN}}"
+        }
+      }
+    parameters:
+      - name: Semgrep App token (for Pro rules)
+        key: SEMGREP_APP_TOKEN
+        placeholder: your_semgrep_app_token
+        optional: true

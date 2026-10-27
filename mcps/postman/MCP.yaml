@@ -1,0 +1,39 @@
+id: postman
+name: Postman
+description: "Works with Postman workspaces, collections, environments, and APIs: search, create, update, and run requests."
+author: Postman
+url: https://github.com/postmanlabs/postman-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/postman.png
+category: development
+content:
+  - name: Remote Server
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://mcp.postman.com/minimal",
+        "headers": {
+          "Authorization": "Bearer {{POSTMAN_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: Postman API key
+        key: POSTMAN_API_KEY
+        placeholder: PMAK-your-api-key
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@postman/postman-mcp-server"
+        ],
+        "env": {
+          "POSTMAN_API_KEY": "{{POSTMAN_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: Postman API key
+        key: POSTMAN_API_KEY
+        placeholder: PMAK-your-api-key

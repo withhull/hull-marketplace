@@ -1,0 +1,62 @@
+id: chroma
+name: Chroma
+description: "Creates and queries Chroma vector collections, adds documents, and runs semantic and full-text search."
+author: Chroma
+url: https://github.com/chroma-core/chroma-mcp
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/chroma.png
+category: data
+content:
+  - name: Local (persistent)
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "--python",
+          "3.12",
+          "--with",
+          "pydantic<2.12",
+          "chroma-mcp",
+          "--client-type",
+          "persistent",
+          "--data-dir",
+          "{{CHROMA_DATA_DIR}}"
+        ]
+      }
+    parameters:
+      - name: Data directory
+        key: CHROMA_DATA_DIR
+        placeholder: /full/path/to/chroma-data
+  - name: Chroma Cloud
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "--python",
+          "3.12",
+          "--with",
+          "pydantic<2.12",
+          "chroma-mcp",
+          "--client-type",
+          "cloud",
+          "--tenant",
+          "{{CHROMA_TENANT}}",
+          "--database",
+          "{{CHROMA_DATABASE}}",
+          "--api-key",
+          "{{CHROMA_API_KEY}}"
+        ]
+      }
+    parameters:
+      - name: Tenant ID
+        key: CHROMA_TENANT
+        placeholder: your-tenant-id
+      - name: Database
+        key: CHROMA_DATABASE
+        placeholder: your-database
+      - name: API key
+        key: CHROMA_API_KEY
+        placeholder: your_chroma_api_key

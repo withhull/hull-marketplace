@@ -1,0 +1,26 @@
+id: airtable
+name: Airtable
+description: "Reads and writes Airtable bases: list bases and tables, search, create, update, and delete records."
+author: domdomegg
+url: https://github.com/domdomegg/airtable-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/airtable.png
+category: data
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "airtable-mcp-server"
+        ],
+        "env": {
+          "AIRTABLE_API_KEY": "{{AIRTABLE_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: Personal access token
+        key: AIRTABLE_API_KEY
+        placeholder: pat123.abc123

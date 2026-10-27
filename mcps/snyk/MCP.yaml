@@ -1,0 +1,23 @@
+id: snyk
+name: Snyk
+description: "Runs Snyk security scans on open source dependencies, code, containers, and infrastructure as code from the agent."
+author: Snyk
+url: https://github.com/snyk/snyk-ls
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/snyk.png
+category: development
+content:
+  - name: NPX
+    prerequisites:
+      - Node.js
+      - Snyk account (run snyk auth once)
+    content: |
+      {
+        "command": "npx",
+        "args": [
+          "-y",
+          "snyk@latest",
+          "mcp",
+          "-t",
+          "stdio"
+        ]
+      }

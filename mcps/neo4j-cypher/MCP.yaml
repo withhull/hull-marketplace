@@ -1,0 +1,38 @@
+id: neo4j-cypher
+name: Neo4j Cypher
+description: Reads a Neo4j graph schema and runs read and write Cypher queries against the database.
+author: Neo4j
+url: https://github.com/neo4j-contrib/mcp-neo4j
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/neo4j-cypher.png
+category: data
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "mcp-neo4j-cypher"
+        ],
+        "env": {
+          "NEO4J_URI": "{{NEO4J_URI}}",
+          "NEO4J_USERNAME": "{{NEO4J_USERNAME}}",
+          "NEO4J_PASSWORD": "{{NEO4J_PASSWORD}}",
+          "NEO4J_DATABASE": "{{NEO4J_DATABASE}}"
+        }
+      }
+    parameters:
+      - name: Connection URI
+        key: NEO4J_URI
+        placeholder: "neo4j://localhost:7687"
+      - name: Username
+        key: NEO4J_USERNAME
+        placeholder: neo4j
+      - name: Password
+        key: NEO4J_PASSWORD
+        placeholder: your_password
+      - name: Database
+        key: NEO4J_DATABASE
+        placeholder: neo4j
+        optional: true

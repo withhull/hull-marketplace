@@ -1,0 +1,30 @@
+id: browser-use
+name: Browser Use
+description: "Controls a local Chromium browser: navigate, click, type, read pages, and manage tabs. An optional OpenAI key enables full browsing tasks."
+author: Browser Use
+url: https://github.com/browser-use/browser-use
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/browser-use.png
+category: web-automation
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+      - Chromium or Google Chrome
+    content: |
+      {
+        "command": "uvx",
+        "args": [
+          "--from",
+          "browser-use[cli]",
+          "browser-use",
+          "--mcp"
+        ],
+        "env": {
+          "OPENAI_API_KEY": "{{OPENAI_API_KEY}}"
+        }
+      }
+    parameters:
+      - name: OpenAI API key (for full browsing tasks)
+        key: OPENAI_API_KEY
+        placeholder: sk-your_openai_key
+        optional: true

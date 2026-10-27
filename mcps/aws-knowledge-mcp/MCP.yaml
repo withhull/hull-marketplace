@@ -1,0 +1,14 @@
+id: aws-knowledge-mcp
+name: AWS Knowledge
+description: "Searches and reads current AWS documentation, API references, What's New posts, and regional availability through AWS's hosted knowledge server."
+author: AWS Labs
+url: https://github.com/awslabs/mcp/tree/main/src/aws-knowledge-mcp-server
+logoUrl: https://pub-d64d170a4f754bff9cf137c5e4e50404.r2.dev/mcps/aws-knowledge-mcp.png
+category: search
+content:
+  - name: Remote Server
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://knowledge-mcp.global.api.aws"
+      }
