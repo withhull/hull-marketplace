@@ -1,0 +1,7 @@
+id: cc-safety-net
+name: Safety Net
+description: Blocks destructive shell commands, such as recursive deletes and force pushes, and stops the agent from reading secret files before they run.
+category: development
+author: kenryu42
+url: https://github.com/kenryu42/claude-code-safety-net
+content: cc-safety-net@^2.6.19

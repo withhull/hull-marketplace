@@ -1,0 +1,7 @@
+id: "@plannotator/opencode"
+name: Plannotator
+description: Opens the agent's plan in an interactive review view where you can annotate, comment on, and approve it before any code is written.
+category: productivity
+author: backnotprop
+url: https://github.com/backnotprop/plannotator
+content: "@plannotator/opencode@^0.28.32"

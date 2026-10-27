@@ -1,0 +1,7 @@
+id: opencode-wakatime
+name: WakaTime
+description: Sends Hull Code session activity to WakaTime so AI-assisted coding time shows up in your WakaTime dashboard. Requires a WakaTime account and API key.
+category: productivity
+author: angristan
+url: https://github.com/angristan/opencode-wakatime
+content: opencode-wakatime@^1.4.0
