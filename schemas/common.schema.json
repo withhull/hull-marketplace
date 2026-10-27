@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/withhull/hull-marketplace/main/schemas/common.schema.json",
+  "title": "Hull marketplace shared definitions",
+  "$defs": {
+    "slug": {
+      "description": "Lowercase kebab-case identifier. It must equal the entry's directory name.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "httpsUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "category": {
+      "description": "Primary category for MCP servers.",
+      "enum": ["business", "data", "development", "observability", "productivity", "search", "web-automation"]
+    },
+    "agentCategory": {
+      "description": "Primary category for agents and skills.",
+      "enum": [
+        "business",
+        "creative-media",
+        "data",
+        "development",
+        "observability",
+        "productivity",
+        "search",
+        "web-automation"
+      ]
+    },
+    "pluginCategory": {
+      "description": "Primary category for plugins.",
+      "enum": [
+        "business",
+        "data",
+        "development",
+        "observability",
+        "productivity",
+        "providers",
+        "search",
+        "web-automation"
+      ]
+    },
+    "prerequisites": {
+      "description": "Things the user needs before installing, shown in the install dialog.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "vscodeExtension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "id"],
+      "properties": {
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "id": {
+          "description": "VS Code extension ID, such as ms-toolsai.jupyter.",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]*\\.[A-Za-z0-9][A-Za-z0-9-]*$"
+        }
+      }
+    },
+    "suggestFor": {
+      "description": "Workspace signals that make Hull Code suggest this entry.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "filename": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^\\*\\.[A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)*$" }
+        },
+        "vscode_extension": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/vscodeExtension" }
+        }
+      }
+    },
+    "requirements": {
+      "description": "Other catalogue entries or editor extensions this entry depends on.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "skills": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "mcps": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "vscode_extensions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/vscodeExtension" } }
+      }
+    }
+  }
+}

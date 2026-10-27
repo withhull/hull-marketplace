@@ -1,0 +1,28 @@
+{
+  "name": "hull-marketplace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "test": "tsx --test scripts/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm run typecheck && pnpm test && pnpm run validate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/npm-package-arg": "^6.1.4",
+    "@types/validate-npm-package-name": "^4.0.2",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "gray-matter": "^4.0.3",
+    "npm-package-arg": "^12.0.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "validate-npm-package-name": "^6.0.2",
+    "yaml": "^2.7.0"
+  }
+}

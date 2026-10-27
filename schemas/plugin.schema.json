@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/withhull/hull-marketplace/main/schemas/plugin.schema.json",
+  "title": "Hull marketplace plugin (plugins/<id>/PLUGIN.yaml)",
+  "description": "id is the npm package name (the directory path, including any @scope/ segment), or git/<host>/<owner>/<repo>[/<subpath>] for a git source.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "description", "category", "author", "url", "content"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "maxLength": 214 },
+    "name": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "description": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "category": { "$ref": "common.schema.json#/$defs/pluginCategory" },
+    "author": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "url": {
+      "description": "Source repository or homepage of the plugin.",
+      "$ref": "common.schema.json#/$defs/httpsUrl"
+    },
+    "content": {
+      "description": "npm registry spec for the package named by id (name, name@version, name@range or name@tag), or git:<repo>[@ref][#subpath].",
+      "$ref": "common.schema.json#/$defs/nonEmptyString"
+    }
+  }
+}

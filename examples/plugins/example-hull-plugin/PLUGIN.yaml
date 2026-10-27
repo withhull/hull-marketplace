@@ -1,0 +1,7 @@
+id: example-hull-plugin
+name: Example Hull Plugin
+description: Illustrates the PLUGIN.yaml format for an npm-published plugin. This package does not exist and is never published.
+category: development
+author: Hull
+url: https://github.com/withhull/hull-marketplace
+content: example-hull-plugin@^1.0.0

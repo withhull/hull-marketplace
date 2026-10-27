@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/withhull/hull-marketplace/main/schemas/agent.schema.json",
+  "title": "Hull marketplace agent (front matter of agents/<id>/AGENT_DEFINITION.md)",
+  "description": "The Markdown body after the front matter is the agent prompt and must not be empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "description", "category"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "name": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "description": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "category": { "$ref": "common.schema.json#/$defs/agentCategory" },
+    "author": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "authorUrl": { "$ref": "common.schema.json#/$defs/httpsUrl" },
+    "prerequisites": { "$ref": "common.schema.json#/$defs/prerequisites" },
+    "mode": {
+      "description": "Defaults to primary.",
+      "enum": ["primary", "subagent", "all"]
+    },
+    "options": { "type": "object" },
+    "requirements": { "$ref": "common.schema.json#/$defs/requirements" },
+    "suggest_for": { "$ref": "common.schema.json#/$defs/suggestFor" },
+    "model": { "type": "string" },
+    "variant": { "type": "string" },
+    "temperature": { "type": "number", "minimum": 0, "maximum": 2 },
+    "top_p": { "type": "number", "minimum": 0, "maximum": 1 },
+    "permission": { "type": "object" },
+    "color": { "type": "string" },
+    "steps": { "type": "integer", "minimum": 1 },
+    "hidden": { "type": "boolean" }
+  }
+}
